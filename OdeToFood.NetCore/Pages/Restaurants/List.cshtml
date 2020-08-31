@@ -2,3 +2,17 @@
 @model OdeToFood.NetCore.Pages.Restaurants.ListModel
 @{
 }
+
+<h1>Restaurant</h1>
+
+<table class="table">
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        <tr>
+            <tb>@restaurant.Name</tb>
+            <tb>@restaurant.Location</tb>
+            <tb>@restaurant.Cuisine</tb>
+
+        </tr>
+    }
+</table>
