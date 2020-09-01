@@ -14,6 +14,7 @@ namespace OdeToFood.NetCore.Pages.Restaurants
     {
         private readonly IConfiguration config;
         private readonly IRestaurantData restaurantData;
+        public string Message { get; set; }
         public IEnumerable<Restaurant> Restaurants { get; set; }
 
         public ListModel(IConfiguration config,
@@ -25,6 +26,7 @@ namespace OdeToFood.NetCore.Pages.Restaurants
 
         public void OnGet()
         {
+            Message = "Hello!";
             Restaurants = restaurantData.GetAll();
         }
     }
