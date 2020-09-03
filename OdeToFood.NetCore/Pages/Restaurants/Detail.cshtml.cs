@@ -18,9 +18,13 @@ namespace OdeToFood.NetCore.Pages.Restaurants
         {
             this.restaurantData = restaurantData;
         }
-        public void OnGet(int resturantID)
+        public IActionResult OnGet(int resturantID)
         {
             Restaurant = restaurantData.GetByID(resturantID);
+            if (Restaurant == null) {
+                return RedirectToPage("./NotFound");
+            }
+            return Page();
         }
     }
 }
